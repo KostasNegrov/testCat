@@ -1,0 +1,118 @@
+
+
+.header  
+  position: relative
+  margin-top: em(40px)
+  &__wrap  
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__logo  
+    height: em(78px)
+    width: em(78px)
+  &__svg
+    width: 100%
+    height: 100%
+    fill: $white
+  &__nav  
+    flex-basis: 42%
+  &__menu  
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-size: 18px
+    line-height: em(22px)   
+    a
+      position: relative
+      color: $white
+      transition: all 300ms 
+      &::before
+        content: ' '
+        position: absolute
+        bottom: em(-6px)
+        left: 50%
+        transform: translateX(-50%)
+        width: 0
+        height: 2px
+        background-color: $accent
+        transition: all 300ms ease
+      &:hover
+        color: $accent
+        &::before
+          width: 100%
+  &__contact  
+    flex-basis: 35%
+    a
+      display: block
+      color: $white
+      font-size: em(24px)
+      font-weight: bold
+      text-align: right
+    span
+      display: block
+      font-size: 18px
+      color: $white
+      text-align: right
+@media (max-width: 1024px)   
+  .header
+    &__nav
+      position: fixed
+      width: 65%
+      height: 100%
+      top: 0
+      right: -65%
+      font-size: 18px
+      background-color: rgba(64, 64, 64, 1)
+      transition: all 300ms ease
+      z-index: 12     
+    &__menu
+      position: absolute
+      flex-direction: column     
+      align-items: flex-start
+      width: 100%
+      top: 50%
+      left: 65%
+      transform: translate(-50%, -50%)
+      font-size: 28px
+      li
+        padding: em(12px) 0
+    &__contact
+      flex-basis: 65%
+      
+.active-burger.header__nav
+  right: 0		  
+  
+  
+@media (min-width: 1025px) and (max-width: 1920px)
+  .header  
+    &__menu  
+      @include dynamicText(116%, 18, 16, 1025px, 1920, 1025)
+    &__contact
+      a
+        @include dynamicText(132%, 20, 14, 1025px, 1920, 1025)
+    span
+      @include dynamicText(103%, 18, 14, 1025px, 1920, 1025)
+
+
+@media (min-width: 320px) and (max-width: 1024px)
+  .header  
+    &__menu
+      @include dynamicText(156%, 28, 20, 1025px, 1920, 1025)
+    &__logo  
+      width: em(72px)
+      height: em(72px)
+    &__contact  
+    a
+      @include dynamicText(148%, 24, 18, 1024px, 1920, 1024)
+    span
+      @include dynamicText(112%, 18, 14, 1025px, 1920, 1025)
+
+@media (max-width: 414px)
+  .header 
+    &__nav
+      width: 85%
+      font-size: 16px
+      right: -85%
+ 
+
+  

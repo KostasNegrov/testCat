@@ -1,0 +1,72 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "normalize"
+@import "_mixins/mixins"
+@import "_mixins/mixinss"
+
+@import "_blocks/header/_header"
+@import "_blocks/header/_burger"
+
+@import "_blocks/intro/_intro"
+@import "_blocks/main/_cards"
+@import "_blocks/main/_card"
+
+@import "_blocks/footer/_footer"
+@import "_blocks/footer/_form"
+
+@import "_blocks/_to-top"
+
+
+*,
+::before,
+::after 
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+	
+body
+	font-family: $default-font
+	font-size: 14px
+	line-height: 1.4
+  position: relative
+	margin: 0
+	padding: 0
+	color: #000
+	background-color: $white
+.container
+	max-width: 1210px
+	min-width: 320px
+	padding: 0 15px 
+	margin: 0 auto 
+
+li
+  list-style-type: none
+a
+  text-decoration: none
+
+button, 
+button:active, 
+button:focus 
+    outline: none
+
+.overlay
+  position: fixed 
+  top: 0 
+  left: 0 
+  z-index: 1100
+  width: 100% 
+  height: 100%   
+  background-color: rgba(64, 64, 64, 0.7)
+  opacity: 0
+  visibility: hidden 
+  transition: all 300ms ease-in-out
+  z-index: 5
+  &.show 
+    opacity: 0.8
+    visibility: visible
+  
+input
+  display: inline-block
+  border: none
+  

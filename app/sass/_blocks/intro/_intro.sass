@@ -1,0 +1,48 @@
+
+
+.intro
+  position: relative
+  padding: 0 0 4% 0
+  overflow: hidden
+  z-index: 10
+  &::before
+    content: ' '
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    bottom: 0
+    background-color: rgba(31, 32, 33, 0.79)
+    z-index: -1
+  &__img
+    img, source  
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      object-fit: cover
+      z-index: -3
+  &__title
+    margin: em(20px) 0 0 0
+    font-size: 38px
+    font-weight: bold
+    color: $white
+    
+        
+
+@media (min-width: 1025px) and (max-width: 1920px) 
+  .intro
+    &__title
+      @include dynamicText(200%, 38, 28, 1025px, 1920, 1025)
+
+@media (min-width: 320px) and (max-width: 1024px)
+  .intro
+    &__title
+      @include dynamicText(200%, 28, 20, 1024px, 1920, 1024)
+
+
+// @media (max-width: 414px)
+//   .intro
+//     &__title
+//       width: 100px

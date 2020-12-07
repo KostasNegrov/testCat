@@ -1,0 +1,30 @@
+
+
+
+
+@mixin dynamicText($minSizePercent, $maxSize, $minSize, $minWidthPx, $maxWidth, $minWidth)
+  font-size: calc(#{$minSizePercent} + (#{$maxSize} - #{$minSize}) * (100vw - #{$minWidthPx}) / (#{$maxWidth} - #{ $minWidth}))
+
+
+
+@mixin min-max($min-width, $max-width, $padding) 
+  min-width: $min-width
+  max-width: $max-width
+  padding: 0 $padding 
+  margin: 0 auto
+
+
+@function rem($size, $basicSize: 16px) 
+  @return $size / $basicSize#{rem}
+
+
+
+
+@function em($px, $base: 16px)   
+  @return ($px / $base) * 1em
+
+
+
+@function vw($px-vw, $base-vw: 1300px)    
+  @return ($px-vw * 100vw) / $base-vw
+

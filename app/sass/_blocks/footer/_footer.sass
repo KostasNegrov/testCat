@@ -1,0 +1,57 @@
+
+
+.footer
+  display: flex
+  justify-content: flex-start
+  align-items: flex-start
+  background-color: $color-footer-bg
+  margin-bottom: em(114px)
+  padding: em(83px) em(80px) em(92px)
+  &__title
+    flex-basis: 40%
+    font-size: 48px
+    color: $white
+    font-weight: bold
+    margin-right: em(17px)
+    span
+      display: block
+      width: em(220px)
+      font-size: 28px
+      font-weight: normal
+      line-height: 91.2%
+      margin-top: em(13px)
+      line-height: em(22px)
+      @media (min-width: 1024px) and (max-width: 1920px)
+        @include dynamicText(42%, 24, 16, 1024px, 1920, 1024)
+  &__form
+    // flex-basis: 65%
+
+@media (min-width: 320px) and (max-width: 1920px)  
+  .footer
+    &__title
+      @include dynamicText(170%, 48, 24, 320px, 1920, 320)
+      
+        
+@media (max-width: 1024px)
+  .footer
+    &__title
+      span
+        font-size: 14px
+    
+@media (max-width: 960px)
+  .footer
+    flex-direction: column
+    align-items: center
+    &__title
+      text-align: center
+      margin-right: 0
+      span
+        width: 100%
+        line-height: 20px
+    &__form
+      margin-top: 50px
+
+@media (max-width: 640px)
+  .footer
+    padding: em(83px) 45px em(92px)
+

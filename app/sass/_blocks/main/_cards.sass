@@ -1,0 +1,59 @@
+
+
+.cards
+  /** .cards__header **/
+  &__header    
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    font-size: em(18px)
+    margin: em(37px) 0
+    * + *
+      margin-left: em(48px)
+    &--title
+      font-weight: 700
+    &--price,
+    &--year
+      display: block
+      position: relative
+      cursor: pointer
+      &::before
+        content: ' '
+        position: absolute
+        top: 53%
+        width: em(6px)
+        height: 2px
+        background-color: $black
+        transform: rotate(40deg) 
+      &::after
+        content: ' '
+        position: absolute
+        top: 53%
+        width: em(6px)
+        height: 2px
+        background-color: $black
+        transform: rotate(-40deg) 
+    &--price::before     
+      left: em(53px)
+    &--price::after    
+      left: em(57px)
+    &--year::before     
+      left: em(83px)
+    &--year::after    
+      left: em(87px)
+      
+      
+@media (min-width: 320px) and (max-width: 1920px)   
+  .cards
+    &__header  
+      @include dynamicText(105%, 18, 14, 320px, 1920, 320)
+
+// @media (max-width: 640px)
+
+
+@media (max-width: 414px) 
+  .cards
+    &__header  
+      font-size: 12px
+      * + *
+        margin-left: 36px

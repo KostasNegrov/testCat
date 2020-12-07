@@ -1,0 +1,95 @@
+
+
+.form
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+  &__email
+    // width: 500px
+    flex-basis: 55%
+    font-size: em(14px)
+    color: $black
+    padding: em(32px) 0  
+    padding-left: em(33px)
+    // padding-right: 20%
+    margin-right: 1vw
+    border-radius: em(10px)
+    float: left
+  &__btn
+    @include btn()
+    padding: em(28px) 0
+    border-radius: 10px
+    font-weight: bold
+    width: ihherit
+    padding-left: 8%
+    padding-right: 8%
+    // padding-left: em(75px)
+    // padding-right: em(75px)
+    // margin: 0 1vw
+    &:hover
+      letter-spacing: normal
+    // margin-left: em(16px)
+  &__checkbox-wrap
+    margin-top: em(35px)
+  &__checkbox
+    flex-basis: 4%
+    appearance: none  
+    &:checked + .form__label::before
+      background-color: $color-btn-bg
+    &:checked + .form__label::after
+      opacity: 1
+  &__label
+    position: relative
+    color: $white
+    font-size: 14px
+    padding-left: 25px
+    cursor: pointer
+    transition: all 300ms ease
+    &:hover
+      color: #ccc
+    &::before
+      content: ' '
+      position: absolute
+      top: -1px
+      left: 0
+      display: block
+      width: 18px
+      height: 18px
+      border: 2px solid $color-btn-bg
+      border-radius: 3px
+      background-color: transparent
+      transition: background-color 100ms ease
+      z-index: 1
+    &::after
+      content: ' '
+      position: absolute
+      top: -1px
+      left: 0
+      display: block
+      width: 18px
+      height: 18px
+      background: url(../images/checkbox-icon.svg) no-repeat center
+      background-size: 10px 10px
+      opacity: 0
+      transition: opacity 100ms ease
+      z-index: 2
+      
+@media (max-width: 640px)
+  .form
+    flex-direction: column
+    &__email
+      flex-basis: 70%
+      width: 70vw
+      margin-right: 0
+    &__btn
+      flex-basis: 70%
+      width: 100%
+      margin-top: 25px
+      
+ 
+    
+
+    
+   
+
